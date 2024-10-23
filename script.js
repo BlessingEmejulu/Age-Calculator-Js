@@ -61,7 +61,7 @@ const calculateAge = (birthDay, birthMonth, birthYear) => {
 
   // Validate the day using the 'isValidDay' function for the given month and year
   if (!isValidDay(birthDay, birthMonth, birthYear)) {
-    error_day.textContent = `Invalid day for the selected month and year.`;
+    error_day.textContent = `Invalid day for the selected month.`;
     return;
   }
 
@@ -83,9 +83,9 @@ const calculateAge = (birthDay, birthMonth, birthYear) => {
       ? currentDay - birthDay
       : 31 + (currentDay - birthDay);
 
-  output_year.textContent = age;
-  output_month.textContent = monthsPassed;
-  output_day.textContent = daysPassed;
+  output_year.textContent = `${age} `;
+  output_month.textContent = `${monthsPassed} `;
+  output_day.textContent = `${daysPassed} `;
 };
 
 submit_btn.addEventListener("click", () => {
