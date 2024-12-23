@@ -2,8 +2,6 @@ const output_year = document.querySelector(".output-year");
 const output_month = document.querySelector(".output-month");
 const output_day = document.querySelector(".output-day");
 
-const submit_btn = document.querySelector(".submit-btn");
-
 const input_year = document.querySelector("#year");
 const input_day = document.querySelector("#day");
 const input_month = document.querySelector("#month");
@@ -11,6 +9,10 @@ const input_month = document.querySelector("#month");
 const error_day = document.querySelector(".error-day");
 const error_month = document.querySelector(".error-month");
 const error_year = document.querySelector(".error-year");
+
+
+const submit_btn = document.querySelector(".submit-btn");
+
 
 // Function to check if a given year is a leap year
 const isLeapYear = (year) => {
@@ -92,7 +94,8 @@ const calculateAge = (birthDay, birthMonth, birthYear) => {
   output_day.textContent = `${daysPassed} `;
 };
 
-submit_btn.addEventListener("click", () => {
+submit_btn.addEventListener("click", (event) => {
+  event.preventDefault();
   const birthDay = parseInt(input_day.value);
   const birthMonth = parseInt(input_month.value);
   const birthYear = parseInt(input_year.value);
